@@ -8,6 +8,7 @@ from PyQt4.QtGui import QMessageBox, QApplication, QFileDialog, QPushButton
 from PyQt4.QtCore import QThread
 from PyQt4 import uic
 import os.path as osp
+import appUsageApp
 import msgBox
 import qutil
 import time
@@ -53,6 +54,8 @@ class SavePrefs(Form, Base):
             self.nameBox.setText(osp.splitext(osp.basename(name))[0].split('_')[0])
         
         self.startThread()
+        
+        appUsageApp.updateDatabase('AutoSave')
         
     def fillPath(self, val):
         if val:
