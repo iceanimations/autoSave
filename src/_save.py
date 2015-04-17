@@ -62,7 +62,7 @@ class SavePrefs(Form, Base):
             self.pathBox.setText(nuke.script_directory())
     
     def showHelp(self):
-        self.showMessage(msg='Every option is self explainary, adjust your\n'+
+        self.showMessage(msg='Every option is self explanatory, adjust your\n'+
                          'settings and check the "Enable" option to start the\n'+
                          'autosave. Just make sure not to close the window,\n'+
                          'minimize it. If you do close the window, autosave\n'+
