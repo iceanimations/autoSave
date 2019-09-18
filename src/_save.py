@@ -9,7 +9,7 @@ import os
 import os.path as osp
 
 from Qt.QtWidgets import (
-        QMessageBox, QFileDialog, QPushButton, QMainWindow)
+        QMessageBox, QFileDialog, QPushButton, QMainWindow, QApplication)
 from Qt.QtCore import QThread
 from Qt.QtCompat import loadUi
 
@@ -31,7 +31,7 @@ __ui_path__ = osp.join(__root_path__, 'ui')
 
 
 class SavePrefs(QMainWindow):
-    def __init__(self, parent=None):
+    def __init__(self, parent=QApplication.activeWindow()):
         super(SavePrefs, self).__init__(parent)
         loadUi(osp.join(__ui_path__, 'main.ui'), self)
 
